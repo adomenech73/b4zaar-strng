@@ -33,5 +33,13 @@
   "transaction": {
     "dataSource": "db",
     "public": true
+  },
+  "dialog": {
+    "dataSource": "db",
+    "public": false
+  },
+  "message": {
+    "dataSource": "db",
+    "public": false
   }
 }
