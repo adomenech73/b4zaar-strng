@@ -10,18 +10,27 @@
       "type": "string",
       "required": true
     },
-    "created": {
-      "type": "date"
-    },
+    "created": {"type": "date"},
     "way": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "meetup": {
-      "type": "boolean"
-    }
+      "type": "boolean",
+      "default": false
+    },
+    "msgs": {"type": ["any"]}
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "messages": {
+      "type": "embedsMany",
+      "model": "message",
+      "property": "msgs",
+      "options": {"validate": true},
+      "forceId": false
+    }
+  },
   "acls": [],
   "methods": []
 }
