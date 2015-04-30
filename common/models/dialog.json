@@ -10,7 +10,9 @@
       "type": "string",
       "required": true
     },
-    "created": {"type": "date"},
+    "created": {
+      "type": "date"
+    },
     "way": {
       "type": "boolean",
       "default": false
@@ -19,7 +21,14 @@
       "type": "boolean",
       "default": false
     },
-    "msgs": {"type": ["any"]}
+    "msgs": {
+      "type": [
+        "any"
+      ]
+    },
+    "unique": {
+      "type": "string"
+    }
   },
   "validations": [],
   "relations": {
@@ -27,7 +36,9 @@
       "type": "embedsMany",
       "model": "message",
       "property": "msgs",
-      "options": {"validate": true},
+      "options": {
+        "validate": true
+      },
       "forceId": false
     }
   },

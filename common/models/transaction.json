@@ -7,14 +7,24 @@
     "validateUpsert": true
   },
   "properties": {
-    "created": {"type": "date"},
-    "product_eval": {"type": "number"},
-    "trensac_eval": {"type": "number"},
+    "created": {
+      "type": "date"
+    },
+    "product_eval": {
+      "type": "number"
+    },
+    "trensac_eval": {
+      "type": "number"
+    },
     "finished": {
       "type": "boolean",
       "default": false
     },
-    "conversations": {"type": ["any"]}
+    "conversations": {
+      "type": [
+        "any"
+      ]
+    }
   },
   "validations": [],
   "relations": {
@@ -22,7 +32,9 @@
       "type": "embedsMany",
       "model": "dialog",
       "property": "conversations",
-      "options": {"validate": true},
+      "options": {
+        "validate": true
+      },
       "forceId": false
     },
     "user": {

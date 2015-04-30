@@ -1,0 +1,10 @@
+[Unit]
+Description=Mongodb anounce service
+BindsTo=mongodb.1.service
+
+[Service]
+ExecStart=/bin/sh -c "while true; do etcdctl set /services/db/mongodb '{ \"host\": \"%H\", \"port\": 27017, \"version\": \"52c7248a14\" }' --ttl 60;sleep 45;done"
+ExecStop=/usr/bin/etcdctl rm /services/db/mongodb
+
+[X-Fleet]
+X-ConditionMachineOf=mongodb.1.service

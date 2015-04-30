@@ -11,11 +11,21 @@
       "type": "string",
       "required": true
     },
-    "description": {"type": "string"},
-    "image": {"type": "string"},
-    "loc": {"type": "geopoint"},
-    "contact": {"type": "string"},
-    "created": {"type": "date"}
+    "description": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "loc": {
+      "type": "geopoint"
+    },
+    "contact": {
+      "type": "string"
+    },
+    "created": {
+      "type": "date"
+    }
   },
   "validations": [],
   "relations": {

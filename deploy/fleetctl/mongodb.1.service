@@ -1,0 +1,31 @@
+[Unit]
+Description= Mongodbis an open-source document database.
+# Requirements
+Requires=etcd.service
+Requires=docker.service
+# Dependency ordering
+After=etcd.service
+After=docker.service
+Before=mongodb-discovery.1.service
+
+[Service]
+# Let processes take awhile to start up (for first run Docker containers)
+TimeoutStartSec=0
+Restart=always
+RestartSec=10s
+# Change killmode from "control-group" to "none" to let Docker remove
+# work correctly.
+KillMode=none
+
+ExecStartPre=-/usr/bin/docker kill mongodb
+ExecStartPre=-/usr/bin/docker rm mongodb
+ExecStartPre=-/usr/bin/docker pull adomenech73/mongodb
+ExecStart=/usr/bin/docker run --rm --name mongodb -p 27017:27017 adomenech73/mongodb
+ExecStop=/usr/bin/docker stop mongodb
+
+[Install]
+WantedBy=local.target
+
+[X-Fleet]
+# Don't schedule on the same machine as other instances
+X-Conflicts=mysql.*.service

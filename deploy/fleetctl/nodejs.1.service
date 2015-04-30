@@ -1,0 +1,31 @@
+[Unit]
+Description=Node.js is a platform built on Chrome's JavaScript runtime for \
+            easily building fast, scalable network applications.
+After=mongodb.1.service
+Requires=mongodb.1.service
+Before=nodejs-discovery.1.service
+
+[Service]
+# Let processes take awhile to start up (for first run Docker containers)
+TimeoutStartSec=0
+Restart=always
+RestartSec=10s
+# Change killmode from "control-group" to "none" to let Docker remove
+# work correctly.
+KillMode=none
+ExecStartPre=-/usr/bin/docker kill nodejs
+ExecStartPre=-/usr/bin/docker rm nodejs
+ExecStartPre=-/usr/bin/docker pull adomenech73/nodejs
+
+ExecStart=/usr/bin/docker run --rm --name nodejs -v /home/core/share:/srv \
+          --link mongodb:mongodb -p 3000:3000 -e "NODE_ENV=test" \
+          adomenech73/nodejs
+
+ExecStop=/usr/bin/docker stop nodejs
+
+[Install]
+WantedBy=local.target
+
+[X-Fleet]
+# Don't schedule on the same machine as other instances
+X-Conflicts=nodejs.*.service

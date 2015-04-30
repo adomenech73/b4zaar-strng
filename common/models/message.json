@@ -10,11 +10,21 @@
       "type": "string",
       "required": true
     },
-    "text": {"type": "string"},
-    "created": {"type": "date"},
-    "order": {"type": "number"},
-    "way": {"type": "boolean"},
-    "loc": {"type": "geopoint"}
+    "text": {
+      "type": "string"
+    },
+    "created": {
+      "type": "date"
+    },
+    "order": {
+      "type": "number"
+    },
+    "way": {
+      "type": "boolean"
+    },
+    "loc": {
+      "type": "geopoint"
+    }
   },
   "validations": [],
   "relations": {
