@@ -4,13 +4,13 @@
     "connector": "memory"
   },
   "mongo": {
-    "host": "localhost",
-    "port": 27017,
-    "url": "/b4zaar-strng-prod",
-    "database": "mongodb://172.17.0.83:27017/b4zaar-strng-prod",
-    "password": "",
     "name": "mongo",
-    "connector": "mongodb",
-    "user": ""
+    "host": "mongodb",
+    "port": 27017,
+    "user": "",
+    "password": "",
+    "url": "mongodb://mongodb:27017/b4zaar-strng-prod",
+    "database": "b4zaar-strng-prod",
+    "connector": "mongodb"
   }
 }
