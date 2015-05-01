@@ -25,9 +25,6 @@
       "type": [
         "any"
       ]
-    },
-    "unique": {
-      "type": "string"
     }
   },
   "validations": [],

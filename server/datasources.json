@@ -9,7 +9,7 @@
     "url": "mongodb://localhost:27017/b4zaar-strng-dev",
     "database": "b4zaar-strng-dev",
     "password": "",
-    "name": "mongods",
+    "name": "mongo",
     "connector": "mongodb",
     "user": ""
   }

@@ -20,7 +20,8 @@
       "type": "number"
     },
     "way": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "loc": {
       "type": "geopoint"

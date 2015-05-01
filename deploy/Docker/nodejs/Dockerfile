@@ -16,7 +16,7 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.24.1/install.sh | b
 ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
 ENV PATH      $NVM_DIR/v$NODE_VERSION/bin:$PATH
 
-# copy supervisor conf
+# copy supervisor conf 
 ADD supervisor/nodejs.conf /etc/supervisor/conf.d/nodejs.conf
 # start supervisor
 CMD ["/usr/bin/supervisord"]
