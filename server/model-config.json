@@ -4,11 +4,20 @@
       "loopback/common/models",
       "loopback/server/models",
       "../common/models",
-      "./models"
+      "./models",
+      "../node_modules/loopback-component-passport/lib/models"
     ]
   },
   "User": {
     "dataSource": "mongo"
+  },
+  "UserCredential": {
+    "dataSource": "db",
+    "public": true
+  },
+  "UserIdentity": {
+    "dataSource": "db",
+    "public": true
   },
   "AccessToken": {
     "dataSource": "db",
