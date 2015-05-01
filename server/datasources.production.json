@@ -7,7 +7,7 @@
     "host": "localhost",
     "port": 27017,
     "url": "/b4zaar-strng-prod",
-    "database": "#{process.env.MONGODB_PORT}/b4zaar-strng-prod",
+    "database": "mongodb://172.17.0.83:27001/b4zaar-strng-prod",
     "password": "",
     "name": "mongo",
     "connector": "mongodb",
