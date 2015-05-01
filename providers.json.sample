@@ -49,6 +49,32 @@
     "consumerSecret": "{twitter-consumer-secret}",
     "failureFlash": true
   },
+    "linkedin-login": {
+      "provider": "linkedin",
+      "module": "passport-linkedin-oauth2",
+      "callbackURL": "/auth/linkedin/callback",
+      "authPath": "/auth/linkedin",
+      "callbackPath": "/auth/linkedin/callback",
+      "successRedirect": "/auth/account",
+      "clientID": "{linkedin-client-id-1}",
+      "clientSecret": "{linkedin-client-secret-1}",
+      "scope": ["r_basicprofile", "r_emailaddress", "r_network"],
+      "state": true
+    },
+    "github-login": {
+      "provider": "github",
+      "module": "passport-github2",
+      "clientID": "{github-client-id-1}",
+      "clientSecret": "{{github-client-secret-1}}",
+      "callbackURL": "/auth/github/callback",
+      "authPath": "/auth/github",
+      "callbackPath": "/auth/github/callback",
+      "successRedirect": "/auth/account",
+      "failureRedirect": "/login",
+      "scope": ["email", "user_likes"],
+      "link": true,
+      "failureFlash": true
+    },
   "facebook-link": {
     "provider": "facebook",
     "module": "passport-facebook",
