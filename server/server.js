@@ -1,3 +1,7 @@
+// Strongops agent
+// must come at the top of your module before any other  require
+require('strong-agent').profile();
+
 var loopback = require('loopback');
 var path = require('path');
 // Create a instance of PassportConfigurator
