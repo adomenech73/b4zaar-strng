@@ -12,12 +12,12 @@
     "dataSource": "mongo"
   },
   "UserCredential": {
-    "dataSource": "db",
-    "public": true
+    "dataSource": "mongo",
+    "public": false
   },
   "UserIdentity": {
-    "dataSource": "db",
-    "public": true
+    "dataSource": "mongo",
+    "public": false
   },
   "AccessToken": {
     "dataSource": "db",
