@@ -40,12 +40,12 @@
     "user": {
       "type": "belongsTo",
       "model": "User",
-      "foreignKey": ""
+      "foreignKey": "clientId"
     },
     "product": {
       "type": "belongsTo",
       "model": "product",
-      "foreignKey": ""
+      "foreignKey": "productId"
     }
   },
   "acls": [
